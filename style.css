@@ -33,11 +33,17 @@ body::after {
   z-index: -1;
 }
 
+.date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .date-time {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  flex-direction: column;
   font-size: 42px;
   line-height: 63px;
 }
@@ -45,4 +51,12 @@ body::after {
 .date-blocks {
   font-size: 24px;
   display: flex;
+}
+
+.div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 15px;
 }
