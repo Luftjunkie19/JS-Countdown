@@ -1,26 +1,70 @@
-let finalDate = new Date(`05-06-${new Date().getFullYear() + 1}`);
+const container = document.querySelector(".container");
 
-const daysLeftBox = document.querySelector(".days-left");
-const hoursLeftBox = document.querySelector(".hours-left");
-const minutesLeftBox = document.querySelector(".minutes-left");
-const secondsLeftBox = document.querySelector(".seconds-left");
+const dates = [
+  new Date(`05-06-${new Date().getFullYear() + 1}`),
+  new Date(`10-01-${new Date().getFullYear() + 1}`),
+  new Date(`01-01-${new Date().getFullYear() + 1}`),
+];
+
+const names = [
+  "Luftie's Birthday",
+  "First Step to Become Programmer",
+  "New year",
+];
 
 function countDown() {
-  setInterval(() => {
-    let currentDate = new Date().getTime();
+  names.forEach((name) => {
+    const div = document.createElement("div");
+    div.classList.add("date");
+    div.innerHTML = `
+    <h1 class="date-name">${name}</h1>
+    
+    <div class="date-time">
+      <div class="div">
+        <h3>Days</h3>
+        <p class="days-left"></p>
+      </div>
 
-    let duration = finalDate.getTime() - currentDate;
+      <div class="div">
+        <h3>Hours</h3>
+        <p class="hours-left"></p>
+      </div>
 
-    const days = Math.floor(duration / 1000 / 60 / 60 / 24);
-    const hours = Math.floor((duration / 1000 / 60 / 60) % 24);
-    const minutes = Math.floor((duration / 1000 / 60) % 60);
-    const seconds = Math.floor((duration / 1000) % 60);
+      <div class="div">
+        <h3>Minutes</h3>
+        <p class="minutes-left"></p>
+      </div>
 
-    daysLeftBox.innerText = `${days}`;
-    hoursLeftBox.innerText = `${hours}`;
-    minutesLeftBox.innerText = `${minutes}`;
-    secondsLeftBox.innerText = `${seconds}`;
-  }, 1000);
+      <div class="div">
+        <h3>Seconds</h3>
+        <p class="seconds-left"></p>
+      </div>
+    </div>`;
+    container.append(div);
+  });
+
+  const daysBoxes = document.querySelectorAll(".days-left");
+  const hoursBoxes = document.querySelectorAll(".hours-left");
+  const minutesBoxes = document.querySelectorAll(".minutes-left");
+  const secondsBoxes = document.querySelectorAll(".seconds-left");
+
+  dates.forEach((date, i) => {
+    setInterval(() => {
+      let currentDate = new Date().getTime();
+
+      let duration = date.getTime() - currentDate;
+
+      const days = Math.floor(duration / 1000 / 60 / 60 / 24);
+      const hours = Math.floor((duration / 1000 / 60 / 60) % 24);
+      const minutes = Math.floor((duration / 1000 / 60) % 60);
+      const seconds = Math.floor((duration / 1000) % 60);
+
+      daysBoxes[i].innerText = `${days}`;
+      hoursBoxes[i].innerText = `${hours}`;
+      minutesBoxes[i].innerText = `${minutes}`;
+      secondsBoxes[i].innerText = `${seconds}`;
+    }, 1000);
+  });
 }
 
 countDown();

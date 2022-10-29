@@ -38,6 +38,7 @@ body::after {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 15px;
 }
 
 .date-time {
