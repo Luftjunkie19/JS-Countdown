@@ -3,8 +3,10 @@ const container = document.querySelector(".container");
 const dates = [
   new Date(`05-06-${new Date().getFullYear() + 1} 05:30:37`),
   new Date(`10-01-${new Date().getFullYear() + 1} 06:00:00`),
-  new Date(`12-31-${new Date().getFullYear() + 1} 23:59:59`),
+  new Date(`12-31-${new Date().getFullYear()}`),
 ];
+
+console.log(dates);
 
 const names = [
   "Luftie's Birthday",
