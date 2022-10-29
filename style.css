@@ -39,6 +39,9 @@ body::after {
   align-items: center;
   flex-direction: column;
   margin: 15px;
+  background-color: darkblue;
+  padding: 15px;
+  border-radius: 5px;
 }
 
 .date-time {

@@ -1,14 +1,14 @@
 const container = document.querySelector(".container");
 
 const dates = [
-  new Date(`05-06-${new Date().getFullYear() + 1}`),
-  new Date(`10-01-${new Date().getFullYear() + 1}`),
+  new Date(`05-06-${new Date().getFullYear() + 1} 05:30:37`),
+  new Date(`10-01-${new Date().getFullYear() + 1} 06:00:00`),
   new Date(`01-01-${new Date().getFullYear() + 1}`),
 ];
 
 const names = [
   "Luftie's Birthday",
-  "First Step to Become Programmer",
+  "First step to become a Programmer",
   "New year",
 ];
 
